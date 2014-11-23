@@ -1,0 +1,21 @@
+{
+  "name": "StudypoolWizard",
+  "version": "0.0.0",
+  "authors": [
+    "teleaziz@gmail.com"
+  ],
+  "description": "Form wizard in jquery and bootstrap",
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.1",
+    "bootstrap": "~3.3.1"
+  }
+}
