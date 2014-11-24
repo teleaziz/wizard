@@ -1,40 +1,125 @@
- fieldset {
-	background: white;
-	border: 0 none;
-	border-radius: 3px;
-	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-	padding: 20px 30px;
-	
-	box-sizing: border-box;
-	width: 80%;
-	margin: 0 10%;
-	
-	/*stacking fieldsets above each other*/
-	position: absolute;
-   
-
-}
-form {
-	text-align: center;
-	position: relative;
+body {
+  padding-top: 70px;
+  /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+  background-color: #ecf0f1;
 }
 
-form fieldset:not(:first-of-type) {
-	display: none;
+::selection {
+  background: #2980b9; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #2980b9; /* Gecko Browsers */
 }
 
 
-#wizard .action-button {
-	width: 100px;
-	background: #27AE60;
-	font-weight: bold;
-	color: white;
-	border: 0 none;
-	border-radius: 1px;
-	cursor: pointer;
-	padding: 10px 5px;
-	margin: 10px 5px;
+.form-card {
+  text-align: center;
+  border: 0 none;
+  border-radius: 3px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.4);
+  padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.8);
 }
-#wizard .action-button:hover, #wizard .action-button:focus {
-	box-shadow: 0 0 0 2px white, 0 0 0 3px #27AE60;
+.form-card * {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
+.form-card .form-group:not(:first-of-type) {
+  display: none;
+}
+
+
+
+
+.stepwizard-step p {
+  margin-top: 10px;
+}
+
+.stepwizard-row {
+  display: table-row;
+}
+
+.stepwizard {
+  display: none;
+  width: 100%;
+  position: relative;
+}
+
+.stepwizard-step a[disabled] {
+  opacity: 1 !important;
+  filter: alpha(opacity=100) !important;
+}
+
+.stepwizard-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+
+}
+
+.stepwizard-step {
+  display: table-cell;
+  text-align: center;
+  position: relative;
+
+
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+
+
+.thin-progress-bar {
+  transition: all 0.5s ease;
+  width: 33%;
+  height: 3px;
+  background: #2980b9 ;
+  position: absolute;
+  margin-top: 0px;
+  top: 0px;
+  left: 0px;
+  display: none;
+}
+
+
+.editable {
+  background: white;
+  height: auto;
+  min-height: 90px ;
+  text-align: left;
+  margin-bottom: 20px;
+  outline: none;
+  border: 0;
+}
+
+.medium-editor-placeholder:after{
+  color: #999999;
+}
+
+input:-moz-placeholder {
+    color: #999999;
+    opacity: 1;
+}
+
+input::-moz-placeholder {
+    color: #999999;
+    opacity: 1;
+}
+
+
+
+
+

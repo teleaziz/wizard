@@ -1,0 +1,32 @@
+{
+  "name": "Tourist.js",
+  "version": "0.1.1",
+  "main": [
+    "./tourist.js",
+    "./tourist.min.js",
+    "./tourist.css"
+  ],
+  "dependencies": {},
+  "ignore": [
+    ".gitignore",
+    ".travis.yml",
+    "LICENSE",
+    "Gruntfile.js",
+    "**/*.md",
+    "**/*.json",
+    "src/",
+    "examples/",
+    "test/"
+  ],
+  "homepage": "https://github.com/easelinc/tourist",
+  "_release": "0.1.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "0.1.1",
+    "commit": "bfa9bb69326671fe3e542b623cbcf57ac91d8d0a"
+  },
+  "_source": "git://github.com/easelinc/tourist.git",
+  "_target": "~0.1.1",
+  "_originalSource": "tourist",
+  "_direct": true
+}
