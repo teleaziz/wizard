@@ -10,7 +10,7 @@ body {
 ::-moz-selection {
   background: #2980b9; /* Gecko Browsers */
 }
-a {
+.prev {
   cursor: pointer;
 }
 
