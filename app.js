@@ -23,13 +23,14 @@ $(function() {
       currentStep= parseInt(currentElem.attr("id").split("-")[1]);
       nextStep=(currentStep+step)%totalSteps
       nextElem = $("#step-"+(nextStep));
-      currentElem.hide();
-      nextElem.show();
+      currentElem.fadeOut().hide();
+      nextElem.fadeIn().show();
       animateProgressBar(currentStep, nextStep);
     }
   };
 
-
+  $(".next, .prev"){
+  }
   $(".next").click(moveStep(1));
   $(".prev").click(moveStep(-1));
   $(".stepwizard-step a").click(function(){
