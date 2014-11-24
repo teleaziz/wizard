@@ -10,7 +10,9 @@ body {
 ::-moz-selection {
   background: #2980b9; /* Gecko Browsers */
 }
-
+a {
+  cursor: pointer;
+}
 
 .form-card {
   text-align: center;
