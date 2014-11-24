@@ -10,13 +10,13 @@
   <title>Registration Samples</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
-  <link rel="stylesheet" href="vendor/bootstrap/dist/css/bootstrap.css" />
-  <link rel="stylesheet" href="vendor/animate.min.css" />
-  <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css" />
-  <link rel="stylesheet" href="vendor/medium/base.css">
-  <link rel="stylesheet" href="vendor/medium/flat.css">
-  <link href="vendor/toastr/toastr.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="wizard/vendor/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="wizard/vendor/animate.min.css" />
+  <link rel="stylesheet" href="wizard/vendor/font-awesome/css/font-awesome.css" />
+  <link rel="stylesheet" href="wizard/vendor/medium/base.css">
+  <link rel="stylesheet" href="wizard/vendor/medium/flat.css">
+  <link href="wizard/vendor/toastr/toastr.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="wizard/app.css">
 </head>
 
 <body >
@@ -34,16 +34,16 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Registration Test</a>
+        <a class="navbar-brand" href="/wizard">Registration Test</a>
       </div>
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav">
           <li>
-            <a href="/">Home</a>
+            <a href="/wizard">Home</a>
           </li>
           <li>
-            <a href="/withsteps.html">Progress Steps</a>
+            <a href="/wizard/withsteps.html">Progress Steps</a>
           </li>
 
         </ul>
@@ -56,10 +56,12 @@
 
   <div class="container">
     <div class="row">
-      <div class="col-xs-8 col-xs-offset-2 form-card">
+      <div class="col-xs-10 col-xs-offset-1 form-card">
         <!--Progress bar-->
         <div class="progress-bar thin-progress-bar" role="progressbar"></div>
-        <div class="stepwizard">
+
+        <!--Progress steps-->
+         <div class="stepwizard">
           <div class="stepwizard-row">           
             <div class="stepwizard-step">
               <a href="#step-0" type="button" class="btn btn-default btn-success btn-circle">1</a>
@@ -82,11 +84,11 @@
             <h2 class="title">Get help with your Academic Question</h2>
             <div class="container-fluid">
               <div class="col-xs-8">
-                <input type="text" class="form-control" id="question-title" placeholder="Question Title" />
+                <input type="text" class="form-control" name="title" id="question-title" placeholder="Question Title*" />
               </div>
               <div class="col-xs-4">
-                <select class="form-control" name="category">
-                  <option value="">Category</option>
+                <select class="form-control" id="categories" name="category">
+                  <option value="">Category*</option>
                   <option value="Math">Math</option>
                   <option value="Programming">Programming</option>
                   <option value="Accounting">Accounting</option>
@@ -94,24 +96,75 @@
 
               </div>
               <div class="col-xs-12 ">
-                <div id="question-body" class="editable form-control">
+                <div id="question-body" class="editable form-control" name="body">
+                </div>
+
+              </div>
+              <!--
+<div class="checkbox col-xs-4 col-xs-offset-8">
+<label>
+<input type="checkbox"  > Enable editor
+</label>
+</div>
+-->
+              <div class="col-xs-12">
+                <a class="pull-right" id="instructions">How it works<span class="fa fa-question-circle"></span></a>
+                <input type="button"  class="next btn btn-danger pull-left" name="next" value="Get Help Now" />
+              </div>
+            </div>
+          </div>
+          <div class="form-group" id="step-1"  >
+            <h2 class="title">Settings</h2>
+
+            <div class="row">
+              <div class="col-xs-2">
+                <label class="control-label "><strong>Time :</strong></label>
+              </div>
+              <div class="col-xs-3">
+                <input type="text" value="3" name="time" id="time" class="form-control" >  
+              </div>
+              <div class="col-xs-4">
+                <select class="form-control" id="unit" name="unit">
+                  <option value="Days">Days</option>
+                  <option value="Math">Hours</option>
+                </select>  </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-2">
+                <label class="control-label "><strong>Privacy:</strong></label>
+              </div>
+              <div class="col-xs-3">
+                <div>
+                  <input type="checkbox" checked name="privacy" id="privacy"> <span class="fa fa-lock"></span> Private
                 </div>
               </div>
             </div>
-            <input type="button"  class="next btn btn-danger pull-right col-xs-4 col-offset-2" name="next" value="Get Help Now" />
-          </div>
-          <div class="form-group" id="step-1"  >
-            <input  type="text" class="form-control" name="email" placeholder="Email2" />
-            <input type="password" class="form-control" name="pass" placeholder="Password2" />
-            <a href="#"  class="prev pull-left col-xs-4 col-offset-2" name="prev"><i class="fa fa-arrow-left"></i> Back</a>
-            <input type="button"  class="next btn btn-success pull-right col-xs-4 col-offset-2" name="next"value="Next" />
+            <div class="row">
+              <div class="col-xs-2">
+                <label class="control-label "><strong>Urgent:</strong></label>
+              </div>
+              <div class="col-xs-3">
+                <div>
+                  <input type="checkbox" name="urgency" id="urgency"> <span class="fa fa-bolt"></span> Urgent
+                </div>
+              </div>
+            </div>
+            <a class="prev pull-left col-xs-4 col-offset-2" name="prev"><i class="fa fa-arrow-left"></i> Back</a>
+            <input type="button"  class="next btn btn-success pull-right col-xs-4 " name="next"value="Next" />
           </div>
           <div class="form-group" id="step-2" >
-            <h2 class="title">Options</h2>
-            <input class="form-control" type="text" name="email" placeholder="Email3" />
-            <input type="password" class="form-control" name="pass" placeholder="Password3" />
-            <a href="#"  class="prev pull-left col-xs-4 col-offset-2" name="prev"><i class="fa fa-arrow-left"></i> Back</a>
-            <input type="button"  class=" btn btn-success pull-right col-xs-4 col-offset-2" name="next" value="s" />
+            <h2 class="title">Email</h2>
+
+            <div class="contianer-fluid">
+              <div class="col-xs-12">
+                <input type="text" class="form-control" name="email" id="email" placeholder="Your Email*" />
+              </div>    
+
+              <a  class="prev pull-left col-xs-4 col-offset-2" name="prev"><i class="fa fa-arrow-left"></i> Back</a>
+              <input type="submit"  class=" btn btn-success pull-right col-xs-4 " name="next" value="submit" />
+
+            </div>
+
           </div>
         </form>
       </div>
@@ -119,14 +172,14 @@
 
   </div>
 
-  <!-- jQuery -->
-  <script src="vendor/jquery/dist/jquery.js"></script>
+  <!--   jQuery -->
+  <script src="wizard/vendor/jquery/dist/jquery.js"></script>
   <!--Bootstrap-->
-  <script src="/vendor/medium/medium-editor.js"></script>
-  <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
-  <script src="vendor/toastr/toastr.js"></script>
-  <script src="app.js"></script>
-  <script src="validate.js"></script>
+  <script src="wizard/vendor/medium/medium-editor.js"></script>
+  <script src="wizard/vendor/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="wizard/vendor/toastr/toastr.js"></script>
+  <script src="wizard/app.js"></script>
+  <script src="wizard/validate.js"></script>
 
 </body>
 </html>
