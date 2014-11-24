@@ -28,9 +28,7 @@ $(function() {
       animateProgressBar(currentStep, nextStep);
     }
   };
-
-  $(".next, .prev"){
-  }
+  
   $(".next").click(moveStep(1));
   $(".prev").click(moveStep(-1));
   $(".stepwizard-step a").click(function(){
