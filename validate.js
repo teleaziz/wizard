@@ -88,7 +88,7 @@ $(function() {
     formData.email = $("#email").val();
     formData.isUrgent = $("#urgency").is("checked");
     formData.isPrivate = $("#privacy").is("checked");
-    formData.limit = $("#time").val() + $("#unit :selected").text();
+    formData.limit = $("#time").val() + " "+ $("#unit :selected").text();
     formData.recipient = "teleaziz@gmail.com"
     if(!validateEmail()) {
       toastr.warning("Please enter a valid email" , "Email not valid");

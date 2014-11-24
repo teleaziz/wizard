@@ -8,6 +8,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $question_category =trim($_POST["category"]);
   $question_body = $_POST["questionBody"];
   $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+  $isUrgent = $_POST["isUrgent"];
+  $isPrivate = $_POST["isPrivate"];
+  $limit = $_POST["limit"];
 
   // Check that data was sent to the mailer.
   if ( empty($question_title) OR empty($question_body) OR empty($question_category) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -28,7 +31,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $email_content = "Title: $question_title\n";
   $email_content .= "Email: $email\n\n";
   $email_content .= "Category: $question_category\n\n";
-  $email_content .= "Question Body:\n$question_body\n";
+  $email_content .= "Question Body:\n$question_body\n\n";
+  $email_content .= "Urgent: $isUrgent\n";
+  $email_content .= "Private: $isPrivate\n";
+  $email_content .= "Limit:\n$limit\n";
+
+
 
 
   // Build the email headers.
@@ -38,19 +46,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (mail($recipient, $subject, $email_content, $email_headers)) {
     // Set a 200 (okay) response code.
     http_response_code(200);
-            header( "refresh:0; url=http://teleaziz.me/contact" ); 
+    header( "refresh:0; url=http://teleaziz.me/contact" ); 
 
   } else {
     // Set a 500 (internal server error) response code.
     http_response_code(500);
-            header( "refresh:0; url=http://teleaziz.me/contact" ); 
+    header( "refresh:0; url=http://teleaziz.me/contact" ); 
 
   }
 
 } else {
   // Not a POST request, set a 403 (forbidden) response code.
   http_response_code(403);
-          header( "refresh:0; url=http://teleaziz.me/contact" ); 
+  header( "refresh:0; url=http://teleaziz.me/contact" ); 
 
 }
 
