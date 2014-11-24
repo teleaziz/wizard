@@ -86,8 +86,8 @@ $(function() {
     formData.questionBody= $qbody.html();
     formData.category = $( "#categories :selected" ).text();
     formData.email = $("#email").val();
-    formData.isUrgent = $("#urgency").is("checked");
-    formData.isPrivate = $("#privacy").is("checked");
+    formData.isUrgent = $("#urgency").is(":checked");
+    formData.isPrivate = $("#privacy").is(":checked");
     formData.limit = $("#time").val() + " "+ $("#unit :selected").text();
     formData.recipient = "teleaziz@gmail.com"
     if(!validateEmail()) {
