@@ -8,8 +8,8 @@ $(function() {
   var $steps = $(".stepwizard a");
   function animateProgressBar(curr, next){
     $(".stepwizard").css("display","table");
-    currentElem = $(".stepwizard-step a[href='#step-"+curr+"']");
-    nextElem = $(".stepwizard-step a[href='#step-"+next+"']");
+    currentElem = $("#progress-"+curr);
+    nextElem = $("#progress-"+next);
     $steps.removeClass("btn-success").show();
     $('.thin-progress-bar').show().width(((next)/totalSteps)*100 + "%");
     nextElem.addClass("btn-success");
@@ -32,7 +32,7 @@ $(function() {
   $(".next").click(moveStep(1));
   $(".prev").click(moveStep(-1));
   $(".stepwizard-step a").click(function(){
-    var step= $(this).attr("href").split("-")[1];
+    var step= $(this).attr("id").split("-")[1];
     currentElem= $(".form-card .form-group:visible");
     currentStep= parseInt(currentElem.attr("id").split("-")[1]);
     moveStep(parseInt(step)-currentStep)();
