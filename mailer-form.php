@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Set the recipient email address.
   // FIXME: Update this to your desired email address.
-  $recipient = "teleaziz@gmail.com";
+  $recipient = " jimmyzhong@studypool.com";
 
   // Set the email subject.
   $subject = "@teleaziz registration form | New question in $question_category";
@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $email_content .= "Question Body:\n$question_body\n\n";
   $email_content .= "Urgent: $isUrgent\n";
   $email_content .= "Private: $isPrivate\n";
-  $email_content .= "Limit:\n$limit\n";
+  $email_content .= "Limit:$limit\n";
 
 
 
@@ -46,21 +46,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (mail($recipient, $subject, $email_content, $email_headers)) {
     // Set a 200 (okay) response code.
     http_response_code(200);
-    header( "refresh:0; url=http://teleaziz.me/contact" ); 
+    header( "refresh:0; url=http://teleaziz.github.io/wizard" ); 
 
   } else {
     // Set a 500 (internal server error) response code.
     http_response_code(500);
-    header( "refresh:0; url=http://teleaziz.me/contact" ); 
+    header( "refresh:0;  url=http://teleaziz.github.io/wizard" ); 
 
   }
 
 } else {
   // Not a POST request, set a 403 (forbidden) response code.
   http_response_code(403);
-  header( "refresh:0; url=http://teleaziz.me/contact" ); 
+  header( "refresh:0;  url=http://teleaziz.github.io/wizard" ); 
 
 }
 
 ?>
-
